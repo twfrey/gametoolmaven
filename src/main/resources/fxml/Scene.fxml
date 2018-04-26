@@ -45,31 +45,33 @@
                               <VBox prefHeight="339.0" prefWidth="168.0">
                                  <children>
                                     <Label prefHeight="17.0" prefWidth="168.0" text="Monster" />
-                                    <ChoiceBox prefHeight="27.0" prefWidth="172.0" />
+                                    <ChoiceBox fx:id="choiceMonster" prefHeight="27.0" prefWidth="172.0" />
                                     <Label prefHeight="17.0" prefWidth="167.0" text="name" />
-                                    <TextField />
+                                    <TextField fx:id="txtMonsterName" />
                                     <Label prefHeight="17.0" prefWidth="170.0" text="agression" />
-                                    <TextField />
+                                    <TextField fx:id="txtMonsterAgression" />
                                     <Label text="fitness" />
-                                    <TextField />
+                                    <TextField fx:id="txtMonsterFitness" />
                                     <Label text="acuity" />
-                                    <TextField />
+                                    <TextField fx:id="txtMonsterAcuity" />
                                     <Label text="charisma" />
-                                    <TextField />
+                                    <TextField fx:id="txtMonsterCharisma" />
                                     <Label text="armor" />
-                                    <TextField />
+                                    <TextField fx:id="txtMonsterArmor" />
                                  </children>
                               </VBox>
-                              <Canvas height="338.0" width="247.0" />
+                              <Canvas fx:id="canvasMonsterTile" height="338.0" width="247.0" />
                               <VBox prefHeight="339.0" prefWidth="185.0">
                                  <children>
+                                    <Label text="Skills" />
+                                    <ComboBox fx:id="choiceMonsterSkills" prefHeight="27.0" prefWidth="195.0" />
                                     <Label text="tileId" />
-                                    <TextField />
-                                    <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="185.0" text="Button" />
+                                    <TextField fx:id="txtMonsterTileId" />
+                                    <Button fx:id="btnMonsterViewTile" mnemonicParsing="false" prefHeight="27.0" prefWidth="185.0" text="View Tile" />
                                     <Label />
-                                    <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="186.0" text="Create/Update" />
+                                    <Button fx:id="btnCreateMonster" mnemonicParsing="false" prefHeight="27.0" prefWidth="186.0" text="Create/Update" />
                                     <Label />
-                                    <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="185.0" text="Delete" />
+                                    <Button fx:id="btnDeleteMonster" mnemonicParsing="false" prefHeight="27.0" prefWidth="185.0" text="Delete" />
                                  </children>
                               </VBox>
                            </children>
@@ -78,11 +80,102 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Untitled Tab 2">
+          <Tab text="Skills">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="338.0" prefWidth="600.0">
+                           <children>
+                              <VBox prefHeight="338.0" prefWidth="149.0">
+                                 <children>
+                                    <Label text="Skill" />
+                                    <ChoiceBox fx:id="choiceSkill" prefWidth="150.0" />
+                                    <Label text="name" />
+                                    <TextField fx:id="txtSkillName" />
+                                    <Label text="affects" />
+                                    <ChoiceBox fx:id="choiceSkillAffects" prefWidth="150.0" />
+                                    <Label text="quantity" />
+                                    <TextField fx:id="txtSkillQuantity" />
+                                    <Label text="turns" />
+                                    <TextField fx:id="txtSkillTurns" />
+                                    <Label text="cost" />
+                                    <TextField fx:id="txtSkillCost" />
+                                    <Label />
+                                    <CheckBox fx:id="checkSkillPermenant" mnemonicParsing="false" text="Permenant" />
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="338.0" prefWidth="279.0">
+                                 <children>
+                                    <Canvas fx:id="canvasSkillTile" height="337.0" width="279.0" />
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="338.0" prefWidth="172.0">
+                                 <children>
+                                    <Label text="TileId" />
+                                    <TextField fx:id="txtSkillTileId" />
+                                    <Button fx:id="btnSetSkillTileId" mnemonicParsing="false" prefHeight="27.0" prefWidth="171.0" text="Set Tile Id" />
+                                    <Label />
+                                    <Button fx:id="btnSkillCreate" mnemonicParsing="false" prefHeight="27.0" prefWidth="172.0" text="Create/Update" />
+                                    <Label />
+                                    <Button fx:id="btnSkillDelete" mnemonicParsing="false" prefHeight="27.0" prefWidth="173.0" text="Delete" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children></AnchorPane>
             </content>
           </Tab>
+            <Tab text="Items">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="338.0" prefWidth="600.0">
+                           <children>
+                              <VBox prefHeight="338.0" prefWidth="172.0">
+                                 <children>
+                                    <Label text="Item" />
+                                    <ComboBox fx:id="choiceItem" prefHeight="27.0" prefWidth="175.0" />
+                                    <Label text="name" />
+                                    <TextField fx:id="txtItemName" />
+                                    <Label text="type" />
+                                    <ComboBox fx:id="choiceItemType" prefHeight="27.0" prefWidth="174.0" />
+                                    <Label text="affects" />
+                                    <TextField fx:id="txtItemAffects" />
+                                    <Label text="quantity" />
+                                    <TextField fx:id="txtItemQuantity" />
+                                    <Label text="turns" />
+                                    <TextField fx:id="txtItemTurns" />
+                                    <Label />
+                                    <CheckBox fx:id="checkPermenant" mnemonicParsing="false" text="permenant" />
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="338.0" prefWidth="241.0">
+                                 <children>
+                                    <Canvas fx:id="canvasItemTile" height="339.0" width="242.0" />
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="338.0" prefWidth="186.0">
+                                 <children>
+                                    <Label text="tile id" />
+                                    <TextField fx:id="txtItemTileId" />
+                                    <Button fx:id="btnSetItemTileId" mnemonicParsing="false" prefHeight="27.0" prefWidth="185.0" text="Set Tile" />
+                                    <Label text="Label" />
+                                    <Button fx:id="btnItemCreate" mnemonicParsing="false" prefHeight="27.0" prefWidth="190.0" text="Create/Update" />
+                                    <Label text="Label" />
+                                    <Button fx:id="btnDeleteItem" mnemonicParsing="false" prefHeight="27.0" prefWidth="190.0" text="Delete" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Equipment">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
         </tabs>
       </TabPane>
    </children>
